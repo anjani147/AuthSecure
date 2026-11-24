@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthSecure | Authentication Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="brand">
+        <span class="logo">🔐</span>
+        <h1>AuthSecure</h1>
+        <p>Secure Authentication Portal</p>
+    </div>
+
+    <!-- Login Form -->
+    <section id="login-section">
+
+        <h2>Welcome back</h2>
+        <p class="subtitle">Sign in to your account</p>
+
+        <form id="login-form">
+            <label>Username</label>
+            <input id="login-username" type="text"
+                   placeholder="Enter username"
+                   autocomplete="username" required>
+
+            <label>Password</label>
+            <input id="login-password" type="password"
+                   placeholder="Enter password"
+                   autocomplete="current-password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p class="switch">
+            Don't have an account?
+            <a href="#" id="show-register">Register</a>
+        </p>
+
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register-section" hidden>
+
+        <h2>Create account</h2>
+        <p class="subtitle">Register to get started</p>
+
+        <form id="register-form">
+            <label>Username</label>
+            <input id="register-username" type="text"
+                   minlength="3" maxlength="50"
+                   autocomplete="username" required>
+
+            <label>Password</label>
+            <input id="register-password" type="password"
+                   minlength="8" maxlength="128"
+                   autocomplete="new-password" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+
+        <p class="switch">
+            Already registered?
+            <a href="#" id="show-login">Sign In</a>
+        </p>
+
+    </section>
+
+    <!-- Private Dashboard -->
+    <section id="dashboard-section" hidden>
+
+        <div class="success-icon">✓</div>
+
+        <h2>Private Dashboard</h2>
+        <p class="subtitle">You are authenticated</p>
+
+        <div class="profile">
+            <p>Username: <strong id="display-username"></strong></p>
+            <p>User ID: <strong id="display-id"></strong></p>
+            <p>Status: <strong class="active">Authenticated</strong></p>
+        </div>
+
+        <button id="logout-button" class="logout">
+            Logout
+        </button>
+
+    </section>
+
+    <p id="message" role="status"></p>
+
+    <footer>
+        FastAPI · JWT · Argon2 · SQLite
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
